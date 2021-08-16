@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 import App from '../App';
-import FrontPage from '../frontPage/frontPage';
+import TodoListPage from '../todolist/todoListPage';
 import ErrorPage from '../errorPage/errorPage';
 
 export const Routes = {
@@ -18,7 +18,7 @@ export const getRouteById = (id: string): string => {
 export default
 <App>
   <Switch>
-    <Route exact path='/' component={FrontPage} />
+    <Route exact path='/' component={TodoListPage} />
     <Route component={ErrorPage} />
   </Switch>
 </App>;

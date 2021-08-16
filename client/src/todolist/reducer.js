@@ -3,6 +3,9 @@ import {
   FETCH_TODOLIST_DATA,
   RECEIVE_TODOLIST_DATA,
   TODOLIST_DATA_NOT_FOUND,
+  CREATE_TODOLIST_ITEM,
+  DELETE_TODOLIST_ITEM,
+  UPDATE_TODOLIST_ITEM,
 } from './types';
 
 const initialState = {
@@ -25,6 +28,15 @@ const todoListSlice = createSlice({
     [RECEIVE_TODOLIST_DATA]: (state, action) => {
       state.isFetchingTodoListData = false;
       state.todoListData = action.payload;
+    },
+    [CREATE_TODOLIST_ITEM]: (state, action) => {
+      state.isFetchingTodoListData = true;
+    },
+    [DELETE_TODOLIST_ITEM]: (state, action) => {
+      state.isFetchingTodoListData = true;
+    },
+    [UPDATE_TODOLIST_ITEM]: (state, action) => {
+      state.isFetchingTodoListData = true;
     },
   }
 });

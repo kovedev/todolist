@@ -1,8 +1,15 @@
 import { all, fork, put, takeEvery, call } from 'redux-saga/effects';
-import { receiveTodoListData, todoListDataNotFound } from './actions';
-import { fetchTodoListData } from './requests';
+import { 
+  fetchTodoListData as fetchTodoListDataAction, 
+  receiveTodoListData, 
+  todoListDataNotFound 
+} from './actions';
+import { fetchTodoListData, createTodoListItem, deleteTodoListItem, updateTodoListItem } from './requests';
 import {
   FETCH_TODOLIST_DATA,
+  CREATE_TODOLIST_ITEM,
+  DELETE_TODOLIST_ITEM,
+  UPDATE_TODOLIST_ITEM,
 } from './types';
 
 export function* fetchTodoListDataSaga() {
@@ -22,10 +29,64 @@ export function* fetchTodoListDataSaga() {
   }
 };
 
+export function* createTodoListItemSaga({payload}) {
+  try {
+    const { status } = yield call(createTodoListItem, payload);
+    switch (status) {
+      case 200:
+        yield put(fetchTodoListDataAction());
+        break;
+      default:
+        yield put(todoListDataNotFound());
+        break;
+    }
+  } catch (error) {
+    console.error('Failed to create todoList item with error "%s"', error);
+    yield put(todoListDataNotFound());
+  }
+};
+
+export function* deleteTodoListItemSaga({payload}) {
+  try {
+    const { status } = yield call(deleteTodoListItem, payload);
+    switch (status) {
+      case 200:
+        yield put(fetchTodoListDataAction());
+        break;
+      default:
+        yield put(todoListDataNotFound());
+        break;
+    }
+  } catch (error) {
+    console.error('Failed to delete todoList item with error "%s"', error);
+    yield put(todoListDataNotFound());
+  }
+};
+
+export function* updateTodoListItemSaga({payload}) {
+  try {
+    const { status } = yield call(updateTodoListItem, payload);
+    switch (status) {
+      case 200:
+        yield put(fetchTodoListDataAction());
+        break;
+      default:
+        yield put(todoListDataNotFound());
+        break;
+    }
+  } catch (error) {
+    console.error('Failed to update todoList item with error "%s"', error);
+    yield put(todoListDataNotFound());
+  }
+};
+
 export default function* counterSaga() {
   yield all([
     fork(function*() {
       yield takeEvery(FETCH_TODOLIST_DATA, fetchTodoListDataSaga);
+      yield takeEvery(CREATE_TODOLIST_ITEM, createTodoListItemSaga);
+      yield takeEvery(DELETE_TODOLIST_ITEM, deleteTodoListItemSaga);
+      yield takeEvery(UPDATE_TODOLIST_ITEM, updateTodoListItemSaga);
     }),
   ]);
 };

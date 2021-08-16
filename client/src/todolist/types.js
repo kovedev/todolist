@@ -1,0 +1,3 @@
+export const FETCH_TODOLIST_DATA = 'todolist/FETCH_TODOLIST_DATA';
+export const RECEIVE_TODOLIST_DATA = 'todolist/RECEIVE_TODOLIST_DATA';
+export const TODOLIST_DATA_NOT_FOUND = 'todolist/TODOLIST_DATA_NOT_FOUND';

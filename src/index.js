@@ -14,7 +14,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.static('front'));
+app.use(express.static('public'));
 
 app.use(async (req, res, next) => {
   req.context = {
@@ -25,11 +25,10 @@ app.use(async (req, res, next) => {
 
 app.use('/api/todolist', routes.todolist);
 
-/* 
+
 app.get('*', (req,res) => {
-  res.sendFile(path.join(__dirname + '/../front/index.html'));
+  res.sendFile(path.join(__dirname + '/../public/index.html'));
 });
-*/
 
 const port = process.env.PORT || 8080;
 

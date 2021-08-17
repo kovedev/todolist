@@ -7,6 +7,7 @@ import {
   deleteTodoListItem,
   updateTodoListItem,
 } from './actions';
+import './todoListPage.css'; 
 
 class TodoListPage extends Component {
   constructor(props) {
@@ -63,27 +64,35 @@ class TodoListPage extends Component {
       return (<div>spinner</div>)
 
     return (
-      <div>
-        {(todoListData && todoListData.todoListItems) &&
-          todoListData.todoListItems.map((item, index) => 
-            <div key={index}>
-              <input
-                type="text"
-                value={item.text}
-                onChange={(event)=>this.updateTodoListItemFunction(event, item.id)} />
-              <button onClick={()=>this.deleteTodoListItemFunction(item.id)}>
-                Delete
-              </button>
-            </div>
-          )}
-        <form onSubmit={this.createTodoListItemFunction}>
-          <div>
+      <form onSubmit={this.createTodoListItemFunction}>
+        <div className='todo-list'>
+          <div className='todo-list-title'>
+            TODO List:
+          </div>
+          {(todoListData && todoListData.todoListItems) &&
+            todoListData.todoListItems.map((item, index) => 
+              <div key={index} className='todo-list-item'>
+                <textarea
+                  className='todo-list-textarea'
+                  value={item.text}
+                  onChange={(event)=>this.updateTodoListItemFunction(event, item.id)} />
+                <button className='todo-list-button' onClick={()=>this.deleteTodoListItemFunction(item.id)}>
+                  Delete
+                </button>
+              </div>
+            )}
+          <div className='todo-list-title'>
             Add new todo item:
           </div>
-          <input value={newTodoItem} type="text" onChange={this.inputChange}/>
-          <input disabled={!newTodoItem} type="submit" value="Submit" />
-        </form>
-      </div>
+            <div className='todo-list-item'>
+              <textarea 
+                className='todo-list-textarea' 
+                value={newTodoItem} 
+                onChange={this.inputChange}/>
+              <input className='todo-list-button' disabled={!newTodoItem} type="submit" value="Add" />
+            </div>
+        </div>
+      </form>
     );
   }
 }

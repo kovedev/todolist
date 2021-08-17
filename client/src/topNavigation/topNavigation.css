@@ -1,0 +1,9 @@
+.top-navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 12px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #FFF;
+  box-shadow: 0 0 10px #1c1c1c1c; 
+}

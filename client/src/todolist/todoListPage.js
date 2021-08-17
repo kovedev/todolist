@@ -61,7 +61,7 @@ class TodoListPage extends Component {
     const { newTodoItem } = this.state;
 
     if(!todoListData && isFetchingTodoListData)
-      return (<div>spinner</div>)
+      return (<div className='todo-list'>loading</div>)
 
     return (
       <form onSubmit={this.createTodoListItemFunction}>

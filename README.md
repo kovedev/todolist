@@ -6,7 +6,6 @@ Frontend code in /client folder.
 Follow instructions below.
 
 ```
-$ npm install @babel/node -g
 $ npm install
 $ npm run start
 server runs in port 8080 and serves static files in public folder

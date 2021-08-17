@@ -1,0 +1,5 @@
+.error-page {
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+}

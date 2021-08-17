@@ -4,4 +4,4 @@ const asyncMiddleware = fn =>
       .catch(next);
 };
 
-export default asyncMiddleware;
+module.exports = asyncMiddleware;

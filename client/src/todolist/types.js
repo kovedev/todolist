@@ -4,3 +4,4 @@ export const TODOLIST_DATA_NOT_FOUND = 'todolist/TODOLIST_DATA_NOT_FOUND';
 export const CREATE_TODOLIST_ITEM = 'todolist/CREATE_TODOLIST_ITEM';
 export const DELETE_TODOLIST_ITEM = 'todolist/DELETE_TODOLIST_ITEM';
 export const UPDATE_TODOLIST_ITEM = 'todolist/UPDATE_TODOLIST_ITEM';
+export const MARK_DONE = 'todolist/MARK_DONE';

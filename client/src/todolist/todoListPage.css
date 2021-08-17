@@ -1,4 +1,5 @@
 .todo-list {
+  font-family: 'Courier New', Courier, monospace;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,9 +20,16 @@
   margin: 12px;
 }
 
+.todo-list-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .todo-list-textarea {
   font-family: 'Courier New', Courier, monospace;
   background-color: #FFFFCC;
+  padding: 8px;
   height: 80px;
   width: 100%;
   max-width: 500px;
@@ -33,8 +41,8 @@
 
 .todo-list-button {
   font-family: 'Courier New', Courier, monospace;
-  width: 80px;
-  margin-left: 10px;
+  width: 85px;
+  margin: 10px;
   border: 0;
   padding: 10px;
   text-align: center;

@@ -1,6 +1,5 @@
-import Sequelize from 'sequelize';
-
-import TodoListItemModel from './todolistitem';
+const Sequelize = require('sequelize');
+const TodoListItemModel = require('./todolistitem');
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
@@ -13,6 +12,7 @@ const models = {
   TodoListItem: TodoListItem,
 }
 
-export { sequelize }
-
-export default models;
+module.exports = {
+  sequelize, 
+  models, 
+};

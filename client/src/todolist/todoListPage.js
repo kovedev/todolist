@@ -6,6 +6,7 @@ import {
   createTodoListItem,
   deleteTodoListItem,
   updateTodoListItem,
+  markDone,
 } from './actions';
 import './todoListPage.css'; 
 
@@ -56,6 +57,17 @@ class TodoListPage extends Component {
       });
   }
 
+  markDoneFunction = (id, done) => {
+    const { markDone, isFetchingTodoListData } = this.props;
+    if(!isFetchingTodoListData)
+      markDone({
+        id: id,
+        data: {
+          done: !done,
+        },
+      });
+  }
+
   render() {
     const { todoListData, isFetchingTodoListData } = this.props;
     const { newTodoItem } = this.state;
@@ -76,9 +88,18 @@ class TodoListPage extends Component {
                   className='todo-list-textarea'
                   value={item.text}
                   onChange={(event)=>this.updateTodoListItemFunction(event, item.id)} />
-                <button className='todo-list-button' onClick={()=>this.deleteTodoListItemFunction(item.id)}>
-                  Delete
-                </button>
+                <div key={index} className='todo-list-buttons'>
+                  <button 
+                    className='todo-list-button' 
+                    onClick={()=>this.markDoneFunction(item.id, item.done)}
+                    style={{ backgroundColor: item.done ? '#8F8A' : '#F88A'}}
+                    >
+                    {item.done ? 'Done' : 'Not Done'}
+                  </button>
+                  <button className='todo-list-button' onClick={()=>this.deleteTodoListItemFunction(item.id)}>
+                    Delete
+                  </button>
+                </div>
               </div>
             )}
           <div className='todo-list-title'>
@@ -102,6 +123,7 @@ const mapDispatchToProps = {
   createTodoListItem,
   deleteTodoListItem,
   updateTodoListItem,
+  markDone,
 };
 
 const mapStateToProps = (state: RootState) => ({

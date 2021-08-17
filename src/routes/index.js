@@ -1,5 +1,5 @@
-import todolist from './todolist';
+const todolist = require('./todolist');
 
-export default {
+module.exports = {
   todolist,
 };

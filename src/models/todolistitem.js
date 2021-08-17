@@ -3,9 +3,13 @@ const TodoListItemModel = (sequelize, DataTypes) => sequelize.define('todolistit
     type: DataTypes.STRING,
     allowNull: false,
   },
+  done: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+  }
 }, {
   tableName: 'todolistitems',
   timestamps: false,
 });
 
-export default TodoListItemModel;
+module.exports = TodoListItemModel;

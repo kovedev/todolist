@@ -21,3 +21,7 @@ export const deleteTodoListItem = (id) => {
 export const updateTodoListItem = ({id, data}) => {
   return axios.patch('/api/todolist/' + id, data, config);
 };
+
+export const markDone = ({id, data}) => {
+  return axios.patch('/api/todolist/markdone/' + id, data, config);
+};

@@ -1,11 +1,10 @@
-import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
-import path from 'path';
-import http from 'http';
-
-import models, { sequelize } from './models';
-import routes from './routes';
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const path  = require('path');
+const http  = require('http');
+const { models, sequelize } = require('./models');
+const routes = require('./routes');
 
 const app = express();
 const server = http.createServer(app);
@@ -24,7 +23,6 @@ app.use(async (req, res, next) => {
 });
 
 app.use('/api/todolist', routes.todolist);
-
 
 app.get('*', (req,res) => {
   res.sendFile(path.join(__dirname + '/../public/index.html'));

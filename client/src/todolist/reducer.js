@@ -6,6 +6,7 @@ import {
   CREATE_TODOLIST_ITEM,
   DELETE_TODOLIST_ITEM,
   UPDATE_TODOLIST_ITEM,
+  MARK_DONE,
 } from './types';
 
 const initialState = {
@@ -36,6 +37,9 @@ const todoListSlice = createSlice({
       state.isFetchingTodoListData = true;
     },
     [UPDATE_TODOLIST_ITEM]: (state, action) => {
+      state.isFetchingTodoListData = true;
+    },
+    [MARK_DONE]: (state, action) => {
       state.isFetchingTodoListData = true;
     },
   }

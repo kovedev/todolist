@@ -6,12 +6,13 @@ Frontend code in /client folder.
 Follow instructions below.
 
 ```
-$ npm run install
+$ npm install
 $ npm run start
 server runs in port 8080 and serves static files in public folder
 
 (optional)
 $ cd client
+$ npm install
 $ npm run start
 client runs in port 3000 with proxy to 8080
 

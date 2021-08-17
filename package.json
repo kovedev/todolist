@@ -5,8 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js --ignore './client/*' --ignore './public/*'",
-    "build": "npm run build --prefix client",
-    "install": "npm install && npm install --prefix client"
+    "build": "npm run build --prefix client"
   },
   "repository": {
     "type": "git",

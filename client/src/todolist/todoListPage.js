@@ -8,7 +8,7 @@ import {
   updateTodoListItem,
   markDone,
 } from './actions';
-import './todoListPage.css'; 
+import './todoListPage.scss'; 
 
 class TodoListPage extends Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import configureStore, { history } from './root/storeConfig';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';

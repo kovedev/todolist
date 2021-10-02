@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { Routes, getRouteById } from '../root/routes';
-import './topNavigation.css'; 
+import './topNavigation.scss'; 
 
 const TopNavigation = () => {
   return (

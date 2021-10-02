@@ -1,9 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import todoListReducer from '../todolist/reducer';
+import authReducer from '../auth/reducer';
 
 const allReducers = { 
   todoList: todoListReducer,
+  auth: authReducer,
 };
 
 export let rootReducer = combineReducers({

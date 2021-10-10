@@ -1,10 +1,5 @@
 import axios from 'axios';
-
-const config = {
-  headers: {
-    'Content-Type': 'application/json'
-  },
-};
+import { config } from '../utils/config';
 
 export const fetchTodoListData = () => {
   return axios.get('/api/todolist');

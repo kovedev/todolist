@@ -3,7 +3,7 @@ const asyncMiddleware = require('./utils/asyncMiddleware');
 
 const router = Router();;
 
-router.get('/', asyncMiddleware(async (req, res, next) => {
+router.get('/', asyncMiddleware(async (req, res) => {
   try {
     const todoListItems = await req.context.models.TodoListItem.findAll();
     return res.json({success: true, todoListItems, response: "All todo list items found!"});

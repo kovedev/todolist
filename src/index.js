@@ -23,6 +23,7 @@ app.use(async (req, res, next) => {
 });
 
 app.use('/api/todolist', routes.todolist);
+app.use('/api/event-history-data', routes.eventdata);
 
 app.get('*', (req,res) => {
   res.sendFile(path.join(__dirname + '/../public/index.html'));
@@ -30,7 +31,7 @@ app.get('*', (req,res) => {
 
 const port = process.env.PORT || 8080;
 
-const restartDataBaseOnStartUp = false;
+const restartDataBaseOnStartUp = true;
 
 sequelize.sync({ force: restartDataBaseOnStartUp }).then(async () => {
   server.listen(port, () => {

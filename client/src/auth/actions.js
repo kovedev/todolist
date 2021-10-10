@@ -1,5 +1,10 @@
-import { SIGNUP, LOGIN, ACCESS_TOKEN_NOT_FOUND, RECEIVE_ACCESS_TOKEN } from './types';
 import { createAction } from 'redux-actions';
+import {
+  SIGNUP, 
+  LOGIN, 
+  ACCESS_TOKEN_NOT_FOUND, 
+  RECEIVE_ACCESS_TOKEN
+} from './types';
 
 export const signUp = payload => createAction(SIGNUP)(payload);
 

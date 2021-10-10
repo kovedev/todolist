@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const TodoListItemModel = require('./todolistitem');
+const EventDataModel = require('./eventdata');
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
@@ -7,9 +8,11 @@ const sequelize = new Sequelize({
 });
 
 const TodoListItem = TodoListItemModel(sequelize, Sequelize)
+const EventData = EventDataModel(sequelize, Sequelize)
 
 const models = {
   TodoListItem: TodoListItem,
+  EventData: EventData,
 }
 
 module.exports = {

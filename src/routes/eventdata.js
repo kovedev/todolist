@@ -6,7 +6,7 @@ const router = Router();;
 router.get('/', asyncMiddleware(async (req, res) => {
   try {
     const eventData = await req.context.models.EventData.findAll();
-    return res.json({success: true, eventData, response: "Event history data found!"});
+    return res.json({success: true, eventData, response: 'Event history data found!'});
   } catch (error) {
     console.log(error);
     return res.json({success: false, response: 'Error!'}); 
@@ -15,6 +15,7 @@ router.get('/', asyncMiddleware(async (req, res) => {
 
 router.post('/', asyncMiddleware(async (req, res) => {
   try {
+    console.log('asdfasdf', req.body);
     const eventData = await req.context.models.EventData.create({
       sensor1: req.body.sensor1,
       sensor2: req.body.sensor2,
@@ -22,7 +23,7 @@ router.post('/', asyncMiddleware(async (req, res) => {
       sensor4: req.body.sensor4,
       date: req.body.date,
     });
-    return res.json({success: true, eventData, response: "Event history data saved!"});
+    return res.json({success: true, eventData, response: 'Event history data saved!'});
   } catch (error) {
     console.log(error);
     return res.json({success: false, response: 'Error!'}); 

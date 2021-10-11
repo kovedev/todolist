@@ -1,0 +1,32 @@
+.event-data-table {
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 100%;
+  margin: 16px 0;
+
+  thead tr {
+    text-align: left;
+  }
+  
+  caption {
+    margin: 4px 0;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}
+
+.control-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  button {
+    border: none;
+    background-color: #1c1c1c8c;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 8px;
+  }
+}

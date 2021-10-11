@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { LOGIN, SIGNUP, ACCESS_TOKEN_NOT_FOUND, RECEIVE_ACCESS_TOKEN } from './types';
-import { setStorageItem, getStorageItem } from '../utils/localStorageUtils';
+import { LOGIN, SIGNUP, ACCESS_TOKEN_NOT_FOUND, RECEIVE_ACCESS_TOKEN, LOGOUT } from './types';
+import { setStorageItem, getStorageItem, removeStorageItem } from '../utils/localStorageUtils';
 
 const initialState = {
   email: getStorageItem('email'),
@@ -31,6 +31,12 @@ const countSlice = createSlice({
       state.isFetching = false;
       state.accessToken = action.payload.accessToken;
       state.email = action.payload.email;
+    },
+    [LOGOUT]: (state) => {
+      removeStorageItem('accessToken');
+      removeStorageItem('email');
+      state.accessToken = '';
+      state.email = '';
     },
   }
 });

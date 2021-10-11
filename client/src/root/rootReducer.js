@@ -1,12 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import eventDataReducer from '../eventData/reducer';
-import todoListReducer from '../todolist/reducer';
 import authReducer from '../auth/reducer';
 
 const allReducers = { 
   eventData: eventDataReducer,
-  todoList: todoListReducer,
   auth: authReducer,
 };
 

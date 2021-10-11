@@ -9,6 +9,8 @@ import {
 import { EventDataTable } from './eventDataTable';
 import { EventHistoryDataTable } from './eventHistoryDataTable';
 
+import './eventDataPage.scss'; 
+
 const EventDataPage = ({ 
   fetchEventData, 
   eventData,
@@ -23,7 +25,7 @@ const EventDataPage = ({
     if(!isFetchingEventData && !eventData && accessToken && !eventHistoryData)
       fetchEventData(accessToken);
       fetchEventHistoryData();
-  }, []);
+  }, []); // eslint-disable-line
 
   const saveEventDataFunction = () => {
     if(!isFetchingEventHistoryData)
@@ -34,7 +36,7 @@ const EventDataPage = ({
     return (<div>Loading</div>)
 
   return (
-    <div>
+    <div className='event-data-content'>
       {eventData && <EventDataTable data={eventData} />}
       <button onClick={() => saveEventDataFunction()}>
         Save event data

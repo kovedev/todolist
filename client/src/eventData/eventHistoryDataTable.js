@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { formatDate } from '../utils/formatDate';
+import './eventDataTable.scss';
 
 export const EventHistoryDataTable = ({ eventHistoryData }) => {
   const [index, setIndex] = useState(0);
@@ -8,7 +10,7 @@ export const EventHistoryDataTable = ({ eventHistoryData }) => {
   if(data)
     return (
       <div>
-        <table>
+        <table className='event-data-table'>
           <caption>History Data</caption>
           <thead>
             <tr>
@@ -19,7 +21,7 @@ export const EventHistoryDataTable = ({ eventHistoryData }) => {
           <tbody>
             <tr>
               <td>Date</td>
-              <td>{data.date}</td>
+              <td>{formatDate(data.date)}</td>
             </tr>
             <tr>
               <td>Sensor 1</td>
@@ -39,12 +41,14 @@ export const EventHistoryDataTable = ({ eventHistoryData }) => {
             </tr>
           </tbody>
         </table>
-        <button disabled={index === 0} onClick={() => setIndex(index - 1)}>
-          {'<'}
-        </button>
-        <button disabled={index === (length - 1)} onClick={() => setIndex(index + 1)}>
-          {'>'}
-        </button>
+        <div className='control-buttons'>
+          <button disabled={index === 0} onClick={() => setIndex(index - 1)}>
+            {'<'}
+          </button>
+          <button disabled={index === (length - 1)} onClick={() => setIndex(index + 1)}>
+            {'>'}
+          </button>
+        </div>
       </div>
     );
   else

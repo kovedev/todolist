@@ -9,6 +9,10 @@ export const setStorageItem = (key, value) => {
   localStorage.setItem(buildStorageKey(key), value);
 };
 
+export const removeStorageItem = (key) => {
+  localStorage.removeItem(buildStorageKey(key));
+};
+
 const buildStorageKey = (key) => {
   return [prefix, key].join(':');
 };

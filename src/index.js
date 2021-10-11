@@ -10,8 +10,7 @@ const app = express();
 const server = http.createServer(app);
 
 app.use(cors());
-
-app.use(bodyParser.json());
+app.use(bodyParser.json({ strict: false }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
@@ -22,7 +21,6 @@ app.use(async (req, res, next) => {
   next();
 });
 
-app.use('/api/todolist', routes.todolist);
 app.use('/api/event-history-data', routes.eventdata);
 
 app.get('*', (req,res) => {
@@ -31,7 +29,7 @@ app.get('*', (req,res) => {
 
 const port = process.env.PORT || 8080;
 
-const restartDataBaseOnStartUp = true;
+const restartDataBaseOnStartUp = false;
 
 sequelize.sync({ force: restartDataBaseOnStartUp }).then(async () => {
   server.listen(port, () => {

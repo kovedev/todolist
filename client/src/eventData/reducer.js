@@ -16,7 +16,7 @@ const initialState = {
   eventHistoryData: null,
 };
 
-const todoListSlice = createSlice({
+const eventDataSlice = createSlice({
   name: 'event-data',
   initialState,
   reducers: {
@@ -48,4 +48,4 @@ const todoListSlice = createSlice({
   }
 });
 
-export default todoListSlice.reducer;
+export default eventDataSlice.reducer;

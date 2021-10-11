@@ -18,7 +18,7 @@ const EventDataModel = (sequelize, DataTypes) => sequelize.define('eventdatas', 
   date: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: false,
+    unique: true,
   }
 }, {
   tableName: 'eventdatas',

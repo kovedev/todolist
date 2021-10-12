@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "nodemon --exec node src/index.js --ignore './client/*' --ignore './public/*'",
     "build": "npm run build --prefix client"

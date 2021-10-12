@@ -30,31 +30,32 @@ const LoginForm = ( props ) => {
   };
 
   return (
-    <div className="login-form">
+    <div className='login-form'>
       <form onSubmit={onSubmit}>
-        {"Please login"}
+        {'Please login'}
         <input
-          name="email"
+          name='email'
           value={email}
-          type="text"
-          placeholder="Email Address"
+          type='text'
+          placeholder='Email Address'
           onChange={e => setEmail(e.target.value)}
         />
         <input
-          name="password"
+          name='password'
           value={password}
-          type="password"
-          placeholder="Password"
+          type='password'
+          placeholder='Password'
           onChange={e => setPassword(e.target.value)}
         />
-        <label>New user</label>
-        <input
-          name="newUser"
-          value={newUser}
-          type="checkbox"
-          onChange={() => setNewUser(!newUser)}
-        />
-        <button type="submit" disabled={password === '' || email === ''}>
+        <label>{'New user: '}
+          <input
+            name='newUser'
+            value={newUser}
+            type='checkbox'
+            onChange={() => setNewUser(!newUser)}
+          />
+        </label>
+        <button type='submit' disabled={password === '' || email === ''}>
           Sign In
         </button>
 

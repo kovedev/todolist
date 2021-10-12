@@ -17,8 +17,9 @@ $ npm run start
 client runs in port 3000 with proxy to 8080
 
 (optional)
-$ chmod +x ./client/postbuild.sh
+$ cd client
+$ chmod +x ./postbuild.sh
 $ npm run build
-$ ./client/postbuild.sh
+$ ./postbuild.sh
 this builds frontcode and moves it to public folder
 ```

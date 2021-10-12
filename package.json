@@ -8,7 +8,6 @@
   },
   "scripts": {
     "start": "nodemon --exec node src/index.js --ignore './client/*' --ignore './public/*'",
-    "build": "npm run build --prefix client"
   },
   "repository": {
     "type": "git",

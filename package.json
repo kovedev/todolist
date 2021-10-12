@@ -7,7 +7,7 @@
     "node": "14.x"
   },
   "scripts": {
-    "start": "nodemon --exec node src/index.js --ignore './client/*' --ignore './public/*'",
+    "start": "nodemon --exec node src/index.js --ignore './client/*' --ignore './public/*'"
   },
   "repository": {
     "type": "git",
